@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 17:29:59 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/23 17:30:03 by nthimoni         ###   ########.fr       */
+/*   Created: 2021/11/23 17:03:15 by nthimoni          #+#    #+#             */
+/*   Updated: 2021/11/23 17:10:51 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *destination, const void *source, size_t size)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	if (destination == NULL || source == NULL)
-		return (NULL);
-	while (i < size)
-	{
-		destination[i] = source[i];
-		i++;
-	}
-	return (destination);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
+

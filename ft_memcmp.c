@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 17:29:59 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/23 17:30:03 by nthimoni         ###   ########.fr       */
+/*   Created: 2021/11/23 19:46:29 by nthimoni          #+#    #+#             */
+/*   Updated: 2021/11/23 20:04:55 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *destination, const void *source, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	unsigned char *m1;
+	unsigned char *m2;
+	int		i;
 
-	if (destination == NULL || source == NULL)
-		return (NULL);
-	while (i < size)
+	i = 0;
+	m1 = (unsigned char *)s1;
+	m2 = (unsigned char *)s2;
+	while(i < n)
 	{
-		destination[i] = source[i];
+		if (m1[i] != m2[i])
+			return (m1[i] - m2[i]);
 		i++;
 	}
-	return (destination);
-}
+	return (0);
+}	
