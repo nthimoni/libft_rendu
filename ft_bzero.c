@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:30:28 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/23 17:30:36 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:05:50 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_bzero(void *pointer, size_t count)
 {
-	unsigned int	i;
-	char 		*ptr;
-	
+	size_t	i;
+	char	*ptr;
+
 	if (pointer == NULL)
-		return;
+		return ;
 	ptr = (char *)pointer;
 	i = 0;
 	while (i < count)

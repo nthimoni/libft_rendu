@@ -6,13 +6,13 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:29:59 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/23 17:30:03 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:48:10 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *destination, const void *source, size_t size)
+void	*ft_memcpy(void *destination, const void *source, size_t size)
 {
 	unsigned int	i;
 	char			*dst;

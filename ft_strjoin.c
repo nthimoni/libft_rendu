@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:39:28 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/24 15:47:24 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:19:51 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(ret, s1, len1 + 1);
 	ft_strlcpy(ret + len1, s2, len2 + 1);
 	return (ret);
-
 }

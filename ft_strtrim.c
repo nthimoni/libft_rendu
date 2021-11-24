@@ -6,18 +6,18 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:50:14 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/24 16:16:11 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:01:48 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int isin(char a, const char *str)
+static	int	isin(char a, const char *str)
 {
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == a)
 			return (1);
@@ -28,15 +28,15 @@ static	int isin(char a, const char *str)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	start;
-	unsigned int	end;
-	char		*ret;
+	size_t	start;
+	size_t	end;
+	char	*ret;
 
 	start = 0;
-	while(isin(s1[start], set))
+	while (isin(s1[start], set))
 		start++;
 	end = ft_strlen(s1) - 1;
-	while(isin(s1[end], set))
+	while (isin(s1[end], set))
 		end--;
 	ret = malloc(end - start + 1 + 1);
 	if (!ret)

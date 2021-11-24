@@ -6,11 +6,11 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:34:10 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/23 16:53:11 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:42:43 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

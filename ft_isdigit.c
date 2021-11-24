@@ -6,11 +6,11 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:47:24 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/23 16:56:56 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:31:53 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

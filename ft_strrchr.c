@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:11:02 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/23 18:17:45 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:50:09 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(s);
 	while (len >= 0)
