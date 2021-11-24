@@ -21,7 +21,7 @@ SRCS = ft_isalpha.c\
 	   ft_atoi.c
 OBJS = ${SRCS:.c=.o}
 AR = ar -rc
-CC = gcc -c
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
@@ -31,7 +31,7 @@ ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
 .o: .c
-	${CC} ${CFLAGS} $< -o $@
+	${CC} -c ${CFLAGS} $< -o $@
 
 clean:
 	rm -f ${OBJS}
