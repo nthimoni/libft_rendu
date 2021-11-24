@@ -12,14 +12,6 @@
 
 #include "libft.h"
 
-static int is_whtspc(char c)
-{
-	if (c == '\t' || c == '\n' || c == '\r' || c == '\v'
-		|| c == '\f' || c == ' ')
-		return (1);
-	return (0);
-}
-
 int	ft_atoi(const char *str)
 {
 	unsigned int		i;
@@ -29,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	signe = 1;
 	ret = 0;
-	while(is_whtspc(str[i]))
+	while((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-')
 	{
@@ -37,7 +29,7 @@ int	ft_atoi(const char *str)
 	}
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while(ft_isdigit(str[i]))
+	while(str[i] >= '0' && str[i] <= '9')
 	{
 		ret *= 10;
 		ret += str[i] - '0';
