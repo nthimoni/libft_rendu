@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 21:18:18 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/25 15:14:26 by nthimoni         ###   ########.fr       */
+/*   Created: 2021/11/25 14:52:55 by nthimoni          #+#    #+#             */
+/*   Updated: 2021/11/25 16:42:45 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	char	*s;
-	char	*d;
-	size_t	i;
+	t_list	*ptr;
 
-	i = 0;
-	s = (char *)src;
-	d = (char *)dest;
-	if (dest == NULL || src == NULL)
-		return (NULL);
-	if (src < dest)
+	if (*alst == NULL)
+		*alst = new;
+	else
 	{
-		while (n-- > 0)
-			d[n] = s[n];
-		return (dest);
+		ptr = (*alst);
+		while (ptr->next)
+			ptr = ptr->next;
+		ptr->next = new;
 	}
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
 }

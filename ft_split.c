@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:19:56 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/24 22:03:09 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/25 17:34:21 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	a;
 
+	if (!s)
+		return (NULL);
 	word_count = wrdcnt(s, c);
 	ret = malloc(sizeof(char *) * (word_count + 1));
 	i = 0;

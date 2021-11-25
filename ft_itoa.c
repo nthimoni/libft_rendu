@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:58:26 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/24 22:05:22 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/25 17:22:46 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char	*ft_itoa(int n)
 
 	len = nb_size(n);
 	ret = malloc(len);
+	if (!ret)
+		return (NULL);
 	fill_str(ret, n, len);
 	return (ret);
 }

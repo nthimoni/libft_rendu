@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 21:18:18 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/25 15:14:26 by nthimoni         ###   ########.fr       */
+/*   Created: 2021/11/25 15:23:08 by nthimoni          #+#    #+#             */
+/*   Updated: 2021/11/25 15:33:53 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	*s;
-	char	*d;
-	size_t	i;
+	t_list	*current;
+	t_list	*next;
 
-	i = 0;
-	s = (char *)src;
-	d = (char *)dest;
-	if (dest == NULL || src == NULL)
-		return (NULL);
-	if (src < dest)
+	current = *lst;
+	while (current)
 	{
-		while (n-- > 0)
-			d[n] = s[n];
-		return (dest);
+		next = current->next;
+		(*del)(current->content);
+		free(current);
+		current = next;
 	}
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
+	*lst = NULL;
 }
