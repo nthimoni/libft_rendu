@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:19:56 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/26 13:28:37 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 14:22:40 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,30 +86,3 @@ char	**ft_split(char const *s, char c)
 	ret[word_count] = NULL;
 	return (ret);
 }
-/*
-int main()
-{
-	  char *s1 = "split  ||this|for|me|||||!|";
-     int i = 0;
-     char **result = ft_split(s1, '|');
- 
-     while (result[i])
-     {
-         printf("%s\n", result[i]);
-         free(result[i]);
-         i++;
-     }
-     free(result);
- 
- 
-
-     char *s2 = "      split       this for   me  !       ";
- 
-     result = ft_split(s2, ' ');
-     while (*result)
-     {
-	 	printf("%s\n", *result);
-         result++;
-     }
-
-}*/
