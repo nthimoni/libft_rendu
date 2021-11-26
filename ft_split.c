@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:19:56 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/26 16:18:43 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 22:20:02 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,18 @@
 static	int	wrdcnt(char const *s, char c)
 {
 	int	count;
-	int	i;
 
-	i = 0;
 	count = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i] != c)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 			count++;
-		while (s[i] && s[i] != c)
-			i++;
+		while (*s && *s != c)
+			s++;
 	}
 	return (count);
-}
-
-static	size_t	wrdlen(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
 }
 
 static	char	*cpywrd(char const *s, char c)
@@ -46,7 +34,9 @@ static	char	*cpywrd(char const *s, char c)
 	char	*wrd;
 	size_t	len;
 
-	len = wrdlen(s, c);
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
 	wrd = malloc(sizeof(char) * (len + 1));
 	if (!wrd)
 		return (NULL);
@@ -61,6 +51,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	a;
 
+	if (!s)
+		return (NULL);
 	ret = malloc(sizeof(char *) * (wrdcnt(s, c) + 1));
 	if (!ret)
 		return (NULL);
@@ -68,16 +60,15 @@ char	**ft_split(char const *s, char c)
 	a = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
+		if (s[i] && s[i] != c)
 		{
 			ret[a] = cpywrd(s + i, c);
 			if (!ret[a++])
 				return (NULL);
+			while (s[i + 1] && s[i + 1] != c)
+				i++;
 		}
-		while (s[i] && s[i] != c)
-			i++;
+		i++;
 	}
 	ret[a] = NULL;
 	return (ret);

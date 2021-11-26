@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:50:14 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/26 16:06:26 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 20:24:39 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,23 @@ static	int	isin(char a, const char *str)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
+	int		start;
+	int		end;
 	char	*ret;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	start = 0;
-	while (isin(s1[start], set))
-		start++;
 	end = ft_strlen(s1) - 1;
-	while (isin(s1[end], set) && end + 1 >= start)
+	while (s1[start] && isin(s1[start], set))
+		start++;
+	start--;
+	while (s1[end] && isin(s1[end], set) && end > start)
 		end--;
-	ret = malloc(end - start + 1 + 1);
+	end++;
+	ret = malloc(end - start);
 	if (!ret)
 		return (NULL);
-	ft_strlcpy(ret, s1 + start, end - start + 1 + 1);
+	ft_strlcpy(ret, s1 + start + 1, end - start);
 	return (ret);
 }
