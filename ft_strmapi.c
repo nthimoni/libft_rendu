@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 20:29:42 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/24 22:02:21 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:07:59 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*cpy;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	cpy = malloc(ft_strlen(s) + 1);
 	if (!cpy)
 		return (NULL);

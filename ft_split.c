@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:19:56 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/26 14:22:40 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:18:43 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,10 @@ static	char	*cpywrd(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**ret;
-	size_t	word_count;
 	size_t	i;
 	size_t	a;
 
-	if (!s)
-		return (NULL);
-	word_count = wrdcnt(s, c);
-	ret = malloc(sizeof(char *) * (word_count + 1));
+	ret = malloc(sizeof(char *) * (wrdcnt(s, c) + 1));
 	if (!ret)
 		return (NULL);
 	i = 0;
@@ -83,6 +79,6 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 	}
-	ret[word_count] = NULL;
+	ret[a] = NULL;
 	return (ret);
 }

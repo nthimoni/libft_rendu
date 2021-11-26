@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:50:14 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/26 12:19:43 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:06:26 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*ret;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	start = 0;
 	while (isin(s1[start], set))
 		start++;

@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:39:28 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/24 21:19:51 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:04:29 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len2;
 	size_t	lent;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	lent = len1 + len2;
