@@ -6,7 +6,7 @@
 /*   By: nthimoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 21:18:18 by nthimoni          #+#    #+#             */
-/*   Updated: 2021/11/25 15:14:26 by nthimoni         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:26:58 by nthimoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	s = (char *)src;
 	d = (char *)dest;
-	if (dest == NULL || src == NULL)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	if (src < dest)
 	{
